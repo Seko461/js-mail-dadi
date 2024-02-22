@@ -4,11 +4,11 @@
 // Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 
-// function stampaVincitore() {
 
-let button1 = document.getElementById('player_1');
 
-button1.addEventListener('click', function () {
+let draw = document.getElementById('draw');
+
+draw.addEventListener('click', function () {
     let min = 1;
     let max = 6;
     var x = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -44,5 +44,3 @@ button1.addEventListener('click', function () {
 
 
 
-
-//};
