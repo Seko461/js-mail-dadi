@@ -3,30 +3,46 @@
 // sia per il giocatore sia per il computer.
 // Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
-// genero un numero random tra 1 e 6
-let x = Math.floor(Math.random() * 6);
-let y = Math.floor(Math.random() * 6);
-// console.log(x);
-let xValue = x;
-let yValue = y;
 
-console.log(xValue);
-console.log(yValue);
+// function stampaVincitore() {
 
+let button1 = document.getElementById('player_1');
 
-let player_1 = document.getElementById('player_1')
-let number_1 = document.getElementById('number_1')
+button1.addEventListener('click', function () {
+    let min = 1;
+    let max = 6;
+    var x = Math.floor(Math.random() * (max - min + 1)) + min;
+    // console.log(x);
+    var number1 = document.getElementById('number_1');
+    number1.innerHTML = 'Giocatore 1 : ' + x;
+    // let min = 1;
+    // let max = 6;
+    var y = Math.floor(Math.random() * (max - min + 1)) + min;
+    // console.log(y);
+    var number2 = document.getElementById('number_2');
+    number2.innerHTML = 'Giocatore 2 : ' + y;
 
-player_1.addEventListener('click', () => {
-    var textNode = document.createTextNode(xValue);
-    number_1.append(textNode);
+    var numbers = [x, y]
+    console.log(numbers)
+
+    var p = document.getElementById('vincitore');
+    for (let index = 0; index < 1; index++) {
+        if (x > y) {
+            p.innerHTML = '1 ha vinto'
+        }
+        else if (x < y) {
+            p.innerHTML = '2 ha vinto'
+        }
+        else {
+            p.innerHTML = 'pareggio'
+        }
+
+    }
 })
 
 
-let player_2 = document.getElementById('player_2')
-let number_2 = document.getElementById('number_2')
 
-player_2.addEventListener('click', () => {
-    var textNode = document.createTextNode(yValue);
-    number_2.append(textNode);
-})
+
+
+
+//};
