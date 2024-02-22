@@ -11,7 +11,8 @@
 let button = document.getElementById('submit_button');
 
 
-button.addEventListener('click', () => {
+button.addEventListener('click', (e) => {
+    e.preventDefault()
 
     // recupero il valore dell'input
     let email = document.getElementById('input').value;
@@ -26,21 +27,34 @@ button.addEventListener('click', () => {
 
     for (i = 0; i < ok.length; i++) {
 
-
+        let valid = document.getElementById('valid');
         if (email = ok[i]) {
 
-            alert("L'indirizzo email che hai inserito e' valido")
+
+            var textNode = document.createTextNode("L'indirizzo email che hai inserito e' valido");
 
         }
         else {
-            alert("L'indirizzo email che hai inserito non e' valido")
+            var textNode = document.createTextNode("L'indirizzo email che hai inserito non e' valido");
         }
-        return false;
+
 
 
 
     }
+    valid.appendChild(textNode);
 
-})
 
+
+
+
+});
+
+
+const deleteAll = document.getElementById('annulla');
+
+deleteAll.addEventListener('click', () => {
+
+    location.reload();
+});
 
