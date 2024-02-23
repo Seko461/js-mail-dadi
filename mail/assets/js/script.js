@@ -9,47 +9,40 @@
 
 //seleziono il tasto submit
 let button = document.getElementById('submit_button');
+const ok = ['seko@mail.com', 'alba@outlook.it', 'dome@pinco.it', 'gigi@pollo.com'];
+console.log(ok);
+console.log(ok.length);
+
 
 
 button.addEventListener('click', (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    // recupero il valore dell'input
+    let email = document.getElementById('input').value;
+    // se non ho inserito nulla nel campo
+    if (email == '') {
+        alert("Devi indicare un indirizzo email"); return false;
+    };
 
-
-    var ok = ["seko@gmail.com", "alba@outlook.it"];
-
-
-    // /^\w+([\.-] ?\w +) *@\w + ([\.-] ?\w +)* (\.\w{ 2, 3 }) +$ /.test(email), 
+    console.log(typeof email, email);
 
     for (i = 0; i < ok.length; i++) {
 
-        // recupero il valore dell'input
-        let email = document.getElementById('input').value;
-
-        // se non ho inserito nulla nel campo
-        if (email == '') {
-            alert("Devi indicare un indirizzo email"); return false;
-        }
-        console.log(typeof email, email);
         // verifico se è un indirizzo valido
-
-
         var valid = document.getElementById('valid');
-        if (email === ok[i]) {
-            var textNode = document.createTextNode("L'indirizzo email che hai inserito e' valido");
+        if (ok[i] == email) {
+
+            console.log(i);
+            // document.write('ok')
+            var textNode = document.createTextNode('ok')
         }
-        else {
-            var textNode = document.createTextNode("L'indirizzo email che hai inserito non e' valido");
-        }
-
-
-
-
 
 
     }
 
 
-    valid.appendChild(textNode);
+
+    valid.append(textNode);
 
 
 
