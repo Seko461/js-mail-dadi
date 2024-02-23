@@ -34,14 +34,14 @@ button.addEventListener('click', (e) => {
 
 
         var valid = document.getElementById('valid');
-        if (email == ok[i]) {
+        if (email === ok[i]) {
             var textNode = document.createTextNode("L'indirizzo email che hai inserito e' valido");
         }
         else {
             var textNode = document.createTextNode("L'indirizzo email che hai inserito non e' valido");
         }
-        valid.appendChild(textNode);
-        return true;
+
+
 
 
 
@@ -49,7 +49,7 @@ button.addEventListener('click', (e) => {
     }
 
 
-
+    valid.appendChild(textNode);
 
 
 
