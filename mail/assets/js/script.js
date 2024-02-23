@@ -24,20 +24,29 @@ button.addEventListener('click', (e) => {
         alert("Devi indicare un indirizzo email"); return false;
     };
 
+    let canAccess = false;
+
     console.log(typeof email, email);
 
     for (i = 0; i < ok.length; i++) {
-
+        let person = ok[i];
         // verifico se è un indirizzo valido
         var valid = document.getElementById('valid');
-        if (ok[i] == email) {
+        if (person === email) {
 
             console.log(i);
             // document.write('ok')
-            var textNode = document.createTextNode('ok')
+            canAccess = true;
         }
 
 
+    }
+    if (canAccess) {
+        console.log('ok')
+        var textNode = document.createTextNode('ok')
+    } else {
+        console.log('no')
+        var textNode = document.createTextNode('no')
     }
 
 
