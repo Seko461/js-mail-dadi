@@ -26,18 +26,18 @@ draw.addEventListener('click', function () {
     console.log(numbers)
 
     var p = document.getElementById('vincitore');
-    for (let index = 0; index < 1; index++) {
-        if (x > y) {
-            p.innerHTML = '1 ha vinto'
-        }
-        else if (x < y) {
-            p.innerHTML = '2 ha vinto'
-        }
-        else {
-            p.innerHTML = 'pareggio'
-        }
 
+    if (x > y) {
+        p.innerHTML = '1 ha vinto'
     }
+    else if (x < y) {
+        p.innerHTML = '2 ha vinto'
+    }
+    else {
+        p.innerHTML = 'pareggio'
+    }
+
+
 })
 
 
